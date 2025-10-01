@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Flatteners | Portofolio Annisa Dina Maharani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B7DFF;
+            --primary-light: #A594FF;
+            --primary-dark: #6B5BFF;
+            --secondary: #FF9E9E;
+            --accent: #7FD1C7;
+            --light: #F8F9FF;
+            --dark: #4A4A6A;
+            --gray: #8C8CA1;
+            --success: #7FD1C7;
+            --warning: #FFD166;
+            --danger: #FF9E9E;
+            --shadow: 0 8px 25px rgba(139, 125, 255, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #F8F9FF 0%, #F0F2FF 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 60px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><path d="M500,50 Q550,20 600,50 T700,50 T800,50 T900,50 T1000,50 L1000,100 L0,100 L0,50 Q100,30 200,50 T400,50 T500,50"/></svg>');
+            background-size: cover;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .page-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .student-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .info-item i {
+            width: 16px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            border-radius: 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 125, 255, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            padding: 50px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(139, 125, 255, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(139, 125, 255, 0.15);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Flatteners Grid */
+        .flatteners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .flattener-card {
+            background: linear-gradient(135deg, #FFFFFF, #F8F9FF);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(139, 125, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flattener-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(139, 125, 255, 0.15);
+        }
+
+        .flattener-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(139, 125, 255, 0.3);
+        }
+
+        .flattener-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .flattener-card h4 {
+            margin-bottom: 12px;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+
+        .flattener-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .relevance-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(127, 209, 199, 0.2);
+            color: var(--success);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Focus Section */
+        .focus-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .focus-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><circle cx="200" cy="50" r="30"/><circle cx="500" cy="30" r="20"/><circle cx="800" cy="70" r="25"/></svg>');
+            background-size: cover;
+        }
+
+        .focus-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .focus-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .focus-content h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .focus-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(139, 125, 255, 0.1);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .impact-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .impact-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), #5A4BD6);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(127, 209, 199, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(139, 125, 255, 0.4);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 125, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            nav .container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .nav-link {
+                white-space: nowrap;
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            .flatteners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .focus-section {
+                padding: 30px 20px;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <h1>10 Flatteners Dunia</h1>
+                    <p class="page-title">Kekuatan Pendatar Dunia menurut Thomas Friedman dan Relevansinya dengan Bidang UI/UX</p>
+                    <div class="student-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <span>Annisa Dina Maharani | 2315061041</span>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i> Beranda
+            </a>
+            <a href="kapsel.html" class="nav-link">
+                <i class="fas fa-book"></i> Kapita Selekta
+            </a>
+            <a href="business-plan.html" class="nav-link">
+                <i class="fas fa-chart-line"></i> Business Plan
+            </a>
+            <a href="flatteners.html" class="nav-link active">
+                <i class="fas fa-globe"></i> 10 Flatteners
+            </a>
+            <a href="open-source.html" class="nav-link">
+                <i class="fab fa-github"></i> Open Source
+            </a>
+            <a href="rencanabisnis.html" class="nav-link">
+                <i class="fas fa-briefcase"></i> Rencana Bisnis
+            </a>
+            <a href="seminar.html" class="nav-link">
+                <i class="fas fa-users"></i> Seminar
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="fade-in">
+            <div class="section-header">
+                <h2>10 Kekuatan Pendatar Dunia</h2>
+                <p class="section-desc">Menurut Thomas Friedman, dunia menjadi "datar" karena 10 kekuatan yang memungkinkan kolaborasi dan kompetisi global yang setara</p>
+            </div>
+            
+            <!-- 10 Flatteners Grid -->
+            <div class="card">
+                <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary-dark);">10 Flatteners Dunia</h3>
+                
+                <div class="flatteners-grid">
+                    <!-- Flattener 1 -->
+                    <div class="flattener-card fade-in">
+                        <div class="flattener-number">1</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-wall"></i>
+                        </div>
+                        <h4>Fall of Berlin Wall</h4>
+                        <p>Runtuhnya Tembok Berlin tahun 1989 menandai berakhirnya Perang Dingin dan membuka era globalisasi serta integrasi ekonomi dunia.</p>
+                        <div class="relevance-badge">Relevansi: Tinggi</div>
+                    </div>
+                    
+                    <!-- Flattener 2 -->
+                    <div class="flattener-card fade-in delay-1">
+                        <div class="flattener-number">2</div>
+                        <div class="flattener-icon">
+                            <i class="fab fa-internet-explorer"></i>
+                        </div>
+                        <h4>Netscape IPO</h4>
+                        <p>Peluncuran Netscape Navigator tahun 1995 membuat internet dapat diakses oleh masyarakat umum, membuka era browsing web yang user-friendly.</p>
+                        <div class="relevance-badge">Relevansi: Sangat Tinggi</div>
+                    </div>
+                    
+                    <!-- Flattener 3 -->
+                    <div class="flattener-card fade-in delay-2">
+                        <div class="flattener-number">3</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4>Workflow Software</h4>
+                        <p>Pengembangan software workflow yang memungkinkan kolaborasi dan integrasi antar sistem dan departemen dalam organisasi.</p>
+                        <div class="relevance-badge">Relevansi: Tinggi</div>
+                    </div>
+                    
+                    <!-- Flattener 4 -->
+                    <div class="flattener-card fade-in delay-3">
+                        <div class="flattener-number">4</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h4>Open Sourcing</h4>
+                        <p>Gerakan open source memungkinkan kolaborasi global dalam pengembangan software dan berbagi pengetahuan secara bebas.</p>
+                        <div class="relevance-badge">Relevansi: Sangat Tinggi</div>
+                    </div>
+                    
+                    <!-- Flattener 5 -->
+                    <div class="flattener-card fade-in">
+                        <div class="flattener-number">5</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                        <h4>Outsourcing</h4>
+                        <p>Perusahaan dapat memindahkan operasi ke negara lain untuk menghemat biaya, menciptakan ekonomi global yang terintegrasi.</p>
+                        <div class="relevance-badge">Relevansi: Sedang</div>
+                    </div>
+                    
+                    <!-- Flattener 6 -->
+                    <div class="flattener-card fade-in delay-1">
+                        <div class="flattener-number">6</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h4>Offshoring</h4>
+                        <p>Relokasi seluruh proses bisnis ke negara lain untuk memanfaatkan tenaga kerja dan sumber daya yang lebih murah.</p>
+                        <div class="relevance-badge">Relevansi: Sedang</div>
+                    </div>
+                    
+                    <!-- Flattener 7 -->
+                    <div class="flattener-card fade-in delay-2">
+                        <div class="flattener-number">7</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-truck-loading"></i>
+                        </div>
+                        <h4>Supply Chaining</h4>
+                        <p>Rantai pasokan global yang efisien memungkinkan koordinasi produksi dan distribusi di seluruh dunia secara real-time.</p>
+                        <div class="relevance-badge">Relevansi: Rendah</div>
+                    </div>
+                    
+                    <!-- Flattener 8 -->
+                    <div class="flattener-card fade-in delay-3">
+                        <div class="flattener-number">8</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h4>Insourcing</h4>
+                        <p>Perusahaan seperti UPS dan FedEx menyediakan layanan logistik yang memungkinkan bisnis kecil bersaing secara global.</p>
+                        <div class="relevansi-badge">Relevansi: Sedang</div>
+                    </div>
+                    
+                    <!-- Flattener 9 -->
+                    <div class="flattener-card fade-in">
+                        <div class="flattener-number">9</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h4>In-forming</h4>
+                        <p>Kemampuan individu untuk mengakses, memproduksi, dan menyebarkan informasi melalui search engine dan platform digital.</p>
+                        <div class="relevance-badge">Relevansi: Sangat Tinggi</div>
+                    </div>
+                    
+                    <!-- Flattener 10 -->
+                    <div class="flattener-card fade-in delay-1">
+                        <div class="flattener-number">10</div>
+                        <div class="flattener-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>The Steroids</h4>
+                        <p>Teknologi digital seperti mobile devices, VoIP, dan video conferencing yang memperkuat dan mempercepat 9 flatteners lainnya.</p>
+                        <div class="relevance-badge">Relevansi: Sangat Tinggi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Focus on Open Source -->
+            <div class="focus-section fade-in">
+                <div class="focus-content">
+                    <div class="focus-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>Fokus: Open Sourcing</h3>
+                    <p>Sebagai calon UI/UX Designer dan Web Developer, <span class="highlight">Open Sourcing</span> adalah flattener yang paling relevan dengan bidang saya. Gerakan open source memberikan akses kepada berbagai tools, library, dan framework seperti React, Vue.js, Figma Community, dan GitHub yang sangat membantu dalam proses pengembangan.</p>
+                    <p style="margin-top: 15px;">Filosofi open source mendorong kolaborasi, transparansi, dan berbagi pengetahuan yang esensial dalam ekosistem pengembangan web dan UI/UX modern.</p>
+                </div>
+            </div>
+
+            <!-- Impact Section -->
+            <div class="card fade-in">
+                <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary-dark);">Dampak untuk KP & Skripsi</h3>
+                
+                <div class="impact-grid">
+                    <div class="impact-card slide-in-left">
+                        <div class="impact-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Akses Tools Gratis</h4>
+                        <p>Dapat menggunakan teknologi terkini tanpa biaya lisensi melalui open source software dan tools.</p>
+                    </div>
+                    
+                    <div class="impact-card slide-in-left delay-1">
+                        <div class="impact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Learning Resources</h4>
+                        <p>Akses ke pengetahuan global melalui dokumentasi, tutorial, dan komunitas developer worldwide.</p>
+                    </div>
+                    
+                    <div class="impact-card slide-in-left delay-2">
+                        <div class="impact-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h4>Collaboration</h4>
+                        <p>Dapat berkolaborasi dengan developer lain melalui platform seperti GitHub untuk meningkatkan kualitas kode.</p>
+                    </div>
+                    
+                    <div class="impact-card slide-in-left delay-3">
+                        <div class="impact-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>Mempercepat inovasi dengan memanfaatkan libraries dan frameworks yang sudah terbukti efektif.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Application -->
+            <div class="card fade-in">
+                <h3 style="text-align: center; margin-bottom: 25px; color: var(--primary-dark);">Penerapan dalam Proyek Saya</h3>
+                
+                <div style="background: linear-gradient(135deg, rgba(139, 125, 255, 0.05), rgba(127, 209, 199, 0.05)); padding: 25px; border-radius: 15px; border-left: 4px solid var(--primary);">
+                    <h4 style="color: var(--primary-dark); margin-bottom: 15px;">📋 Studi Kasus: Pengembangan Aplikasi E-Parking</h4>
+                    <p style="color: var(--gray); line-height: 1.7; margin-bottom: 15px;">
+                        Dalam pengembangan aplikasi E-Parking untuk skripsi, saya memanfaatkan berbagai flatteners:
+                    </p>
+                    <ul style="color: var(--gray); line-height: 1.7; padding-left: 20px;">
+                        <li><strong>Open Source:</strong> Menggunakan React.js, Node.js, dan MongoDB yang tersedia gratis</li>
+                        <li><strong>In-forming:</strong> Research melalui Google Scholar dan dokumentasi online untuk metodologi</li>
+                        <li><strong>Workflow Software:</strong> Menggunakan Git dan GitHub untuk version control dan kolaborasi</li>
+                        <li><strong>The Steroids:</strong> Mengembangkan mobile-responsive design untuk akses dari berbagai device</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Annisa Dina Maharani</h3>
+                    <p>UI/UX Enthusiast & Frontend Developer</p>
+                    <p style="margin-top: 10px; opacity: 0.8;">NPM: 2315061041<br>Teknik Informatika - Semester 5</p>
+                </div>
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 15px; color: white;">Navigasi Cepat</h4>
+                    <a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a>
+                    <a href="kapsel.html"><i class="fas fa-chevron-right"></i> Kapita Selekta</a>
+                    <a href="business-plan.html"><i class="fas fa-chevron-right"></i> Business Plan</a>
+                    <a href="flatteners.html"><i class="fas fa-chevron-right"></i> 10 Flatteners</a>
+                    <a href="open-source.html"><i class="fas fa-chevron-right"></i> Open Source</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portofolio Kapita Selekta Annisa Dina Maharani. Dibuat dengan <i class="fas fa-heart" style="color: var(--secondary);"></i> | All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navigation active state
+        const navLinks = document.querySelectorAll('.nav-link');
+        const currentPage = window.location.pathname.split('/').pop() || 'flatteners.html';
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+            
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.card, .flattener-card, .impact-card, .focus-section');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
