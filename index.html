@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda | Portofolio Annisa Dina Maharani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B7DFF;
+            --primary-light: #A594FF;
+            --primary-dark: #6B5BFF;
+            --secondary: #FF9E9E;
+            --accent: #7FD1C7;
+            --light: #F8F9FF;
+            --dark: #4A4A6A;
+            --gray: #8C8CA1;
+            --success: #7FD1C7;
+            --warning: #FFD166;
+            --danger: #FF9E9E;
+            --shadow: 0 8px 25px rgba(139, 125, 255, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #F8F9FF 0%, #F0F2FF 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><path d="M500,50 Q550,20 600,50 T700,50 T800,50 T900,50 T1000,50 L1000,100 L0,100 L0,50 Q100,30 200,50 T400,50 T500,50"/></svg>');
+            background-size: cover;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-section {
+            flex: 1;
+        }
+
+        .profile-image-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--primary-light));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .student-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(139, 125, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 125, 255, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            border-radius: 20px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 125, 255, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(139, 125, 255, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(139, 125, 255, 0.15);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 35px 25px;
+            border-radius: 18px;
+            transition: var(--transition);
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FF 100%);
+            border: 1px solid rgba(139, 125, 255, 0.1);
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(139, 125, 255, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(139, 125, 255, 0.3);
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: 1.3rem;
+        }
+
+        .feature p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), #5A4BD6);
+            color: white;
+            padding: 60px 0 25px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(127, 209, 199, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(139, 125, 255, 0.4);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 125, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .profile-image-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-text {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            nav .container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .nav-link {
+                white-space: nowrap;
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-section">
+                    <div class="profile-image-container">
+                        <div class="profile-image">
+                            <img src="poto1.jpg" alt="Annisa Dina Maharani" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <i class="fas fa-user-graduate" style="display: none; color: white; font-size: 3rem;"></i>
+                        </div>
+                        <div class="profile-text">
+                            <h1>Annisa Dina Maharani</h1>
+                            <p class="tagline">UI/UX Enthusiast & Frontend Developer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="student-info">
+                        <div class="info-item">
+                            <i class="fas fa-id-card"></i>
+                            <span>NPM: 2315061041</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-university"></i>
+                            <span>Teknik Informatika - Semester 5</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Universitas Lampung</span>
+                        </div>
+                    </div>
+                    
+                    <p class="intro">Saya adalah mahasiswa Teknik Informatika yang memiliki passion dalam menciptakan pengalaman pengguna yang menarik dan intuitif melalui desain UI/UX yang terfokus pada kebutuhan pengguna. Saya berfokus pada pengembangan frontend dan mobile applications dengan pendekatan user-centered design.</p>
+                    
+                    <div class="quick-links">
+                        <a href="kapsel.html" class="btn btn-primary">
+                            <i class="fas fa-book-open"></i> Kapita Selekta
+                        </a>
+                        <a href="business-plan.html" class="btn btn-outline">
+                            <i class="fas fa-chart-line"></i> Business Plan
+                        </a>
+                        <a href="open-source.html" class="btn btn-outline">
+                            <i class="fab fa-github"></i> Open Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="nav-link active">
+                <i class="fas fa-home"></i> Beranda
+            </a>
+            <a href="kapsel.html" class="nav-link">
+                <i class="fas fa-book"></i> Kapita Selekta
+            </a>
+            <a href="business-plan.html" class="nav-link">
+                <i class="fas fa-chart-line"></i> Business Plan
+            </a>
+            <a href="flatteners.html" class="nav-link">
+                <i class="fas fa-globe"></i> 10 Flatteners
+            </a>
+            <a href="open-source.html" class="nav-link">
+                <i class="fab fa-github"></i> Open Source
+            </a>
+            <a href="rencanabisnis.html" class="nav-link">
+                <i class="fas fa-briefcase"></i> Rencana Bisnis
+            </a>
+            <a href="seminar.html" class="nav-link">
+                <i class="fas fa-users"></i> Seminar
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home" class="fade-in">
+            <div class="section-header">
+                <h2>Tentang Saya</h2>
+                <p class="section-desc">Mahasiswa Teknik Informatika Universitas Lampung dengan fokus pada pengembangan UI/UX dan aplikasi web & mobile</p>
+            </div>
+            
+            <div class="card">
+                <p>Sebagai mahasiswa Teknik Informatika semester 5, saya memiliki ketertarikan mendalam dalam bidang desain antarmuka pengguna (UI/UX) dan pengembangan aplikasi web & mobile. Melalui portofolio ini, saya ingin membagikan pemahaman dan rencana strategis saya dalam menghadapi tantangan di dunia teknologi informasi, khususnya yang berkaitan dengan mata kuliah Kapita Selekta.</p>
+                
+                <div class="features-grid">
+                    <div class="feature fade-in delay-1">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Menciptakan pengalaman pengguna yang menarik dan intuitif melalui desain yang terfokus pada kebutuhan pengguna dengan pendekatan user-centered design.</p>
+                    </div>
+                    <div class="feature fade-in delay-2">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <p>Mengembangkan aplikasi web responsif dengan teknologi terkini seperti React, Vue.js, dan framework modern lainnya dengan standar terbaik.</p>
+                    </div>
+                    <div class="feature fade-in delay-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
+                        <p>Membangun aplikasi mobile yang optimal untuk berbagai platform dengan fokus pada performance dan user experience yang seamless.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Annisa Dina Maharani</h3>
+                    <p>UI/UX Enthusiast & Frontend Developer</p>
+                    <p style="margin-top: 10px; opacity: 0.8;">NPM: 2315061041<br>Teknik Informatika - Semester 5</p>
+                </div>
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 15px; color: white;">Navigasi Cepat</h4>
+                    <a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a>
+                    <a href="kapsel.html"><i class="fas fa-chevron-right"></i> Kapita Selekta</a>
+                    <a href="business-plan.html"><i class="fas fa-chevron-right"></i> Business Plan</a>
+                    <a href="flatteners.html"><i class="fas fa-chevron-right"></i> 10 Flatteners</a>
+                    <a href="open-source.html"><i class="fas fa-chevron-right"></i> Open Source</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portofolio Kapita Selekta Annisa Dina Maharani. Dibuat dengan <i class="fas fa-heart" style="color: var(--secondary);"></i> | All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navigation active state
+        const navLinks = document.querySelectorAll('.nav-link');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+            
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and features
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.card, .feature');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Handle image loading error
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileImage = document.querySelector('.profile-image img');
+            if (profileImage) {
+                profileImage.onerror = function() {
+                    this.style.display = 'none';
+                    const fallbackIcon = this.nextElementSibling;
+                    if (fallbackIcon) {
+                        fallbackIcon.style.display = 'flex';
+                    }
+                };
+            }
+        });
+    </script>
+</body>
+</html>
